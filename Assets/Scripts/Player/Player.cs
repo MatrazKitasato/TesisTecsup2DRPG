@@ -42,8 +42,6 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.zero;
             Debug.Log("No se mueve");
         }
-        Debug.Log("velocidad:" + movement);
-        Debug.Log("magnitud" + movement.magnitude);
     }
     public void GetInput()
     {
