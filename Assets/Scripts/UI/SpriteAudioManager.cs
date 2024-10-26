@@ -15,7 +15,7 @@ public class SpriteAudioManager : MonoBehaviour
     public AudioSource audioSource;
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         int isMuted = PlayerPrefs.GetInt("isAudioMuted", 0);
         UpdateSpriteAndAudio(isMuted == 1);
     }
