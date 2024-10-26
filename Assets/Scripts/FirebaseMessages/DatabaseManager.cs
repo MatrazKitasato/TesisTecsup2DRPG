@@ -5,15 +5,15 @@ using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using UnityEngine.UI;
+using TMPro;
 
 public class DatabaseManager : MonoBehaviour
 {
-    public InputField inputField; // Asigna el InputField desde el Inspector
+    public TMP_InputField inputField; // Asigna el InputField desde el Inspector
     private DatabaseReference databaseReference;
 
     void Start()
     {
-        // Inicializa Firebase
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             FirebaseApp app = FirebaseApp.DefaultInstance;
@@ -32,7 +32,7 @@ public class DatabaseManager : MonoBehaviour
                 if (task.IsCompleted)
                 {
                     Debug.Log("Mensaje enviado a Firebase: " + message);
-                    inputField.text = ""; // Limpiar el InputField
+                    inputField.text = "";
                 }
                 else
                 {

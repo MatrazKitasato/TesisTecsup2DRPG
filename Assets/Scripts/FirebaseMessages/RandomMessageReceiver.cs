@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI; // Asegúrate de incluir esto si usas UI Text
+using UnityEngine.UI;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
@@ -10,8 +10,7 @@ public class RandomMessageReceiver : MonoBehaviour
 {
     private DatabaseReference databaseReference;
 
-    // Lista para almacenar los objetos de texto
-    public List<TextMeshProUGUI> messageTexts; // Asigna los objetos de texto desde el Inspector
+    public List<TextMeshProUGUI> messageTexts;
 
     void Start()
     {
@@ -39,7 +38,6 @@ public class RandomMessageReceiver : MonoBehaviour
 
                 List<string> randomMessages = GetRandomMessages(messages, messageTexts.Count);
 
-                // Asignar mensajes a los objetos de texto
                 for (int i = 0; i < messageTexts.Count; i++)
                 {
                     if (i < randomMessages.Count)
@@ -48,7 +46,7 @@ public class RandomMessageReceiver : MonoBehaviour
                     }
                     else
                     {
-                        messageTexts[i].text = ""; // Limpiar el texto si no hay más mensajes
+                        messageTexts[i].text = "";
                     }
                 }
             }
@@ -66,13 +64,11 @@ public class RandomMessageReceiver : MonoBehaviour
 
         if (totalMessages == 0) return randomMessages;
 
-        // Selecciona mensajes aleatorios
         while (randomMessages.Count < count && randomMessages.Count < totalMessages)
         {
             int randomIndex = Random.Range(0, totalMessages);
             string randomMessage = messages[randomIndex];
 
-            // Asegurarse de que no se repita el mensaje
             if (!randomMessages.Contains(randomMessage))
             {
                 randomMessages.Add(randomMessage);
