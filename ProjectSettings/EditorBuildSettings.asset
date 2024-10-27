@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/FirebaseMessage.unity
+    path: Assets/Scenes/MessageReciever.unity
     guid: b8023482909cf654a91906d35d8884cc
   - enabled: 1
-    path: Assets/Scenes/FirebaseMessageViewer.unity
+    path: Assets/Scenes/MessageViewer.unity
     guid: 52dc2bfc133e83840a26a1b2db891332
   m_configObjects: {}
