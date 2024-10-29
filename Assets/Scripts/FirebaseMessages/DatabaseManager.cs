@@ -47,7 +47,7 @@ public class DatabaseManager : MonoBehaviour
         }
         else
         {
-            errorMessageText.text = "Debes escribir un mensaje.";
+            errorMessageText.text = "Debes escribir un mensaje...";
         }
     }
     private void ChangeScene()

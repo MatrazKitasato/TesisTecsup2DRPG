@@ -9,17 +9,35 @@ public class Background : MonoBehaviour
     Image image;
     Vector2 offset;
     Material material;
+    public bool isImage;
     void Awake()
     {
-        material = GetComponent<Material>();
-        image = GetComponent<Image>();
-        image.material.mainTextureOffset = Vector2.zero;
+        
+        if (isImage)
+        {
+            material = GetComponent<Image>().material;
+            material.mainTextureOffset = Vector2.zero;
+        }
+        else
+        {
+            material = GetComponent<SpriteRenderer>().material;
+            material.mainTextureOffset = Vector2.zero;
+        }
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         offset = speed * Time.deltaTime;
-        image.material.mainTextureOffset += offset;
+        if(isImage)
+        {
+            material.mainTextureOffset += offset;
+        }
+        else
+        {
+            material.mainTextureOffset += offset;
+        }
+        
     }
 }
