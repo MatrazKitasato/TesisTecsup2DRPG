@@ -9,7 +9,7 @@ public class AudioToggleButton : MonoBehaviour
     public SpriteAudioManager audioManager;
     void Start()
     {
-        audioManager = FindObjectOfType<SpriteAudioManager>();
+        //audioManager = FindObjectOfType<SpriteAudioManager>();
 
         if (audioManager == null)
         {
