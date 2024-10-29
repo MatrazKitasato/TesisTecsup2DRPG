@@ -13,10 +13,11 @@ public class SpriteAudioManager : MonoBehaviour
     public Button targetButton;
     [Header("Sounds")]
     public AudioSource audioSource;
+    public string mutekey;
     void Start()
     {
         //DontDestroyOnLoad(gameObject);
-        int isMuted = PlayerPrefs.GetInt("isAudioMuted", 0);
+        int isMuted = PlayerPrefs.GetInt(mutekey, 0);
         UpdateSpriteAndAudio(isMuted == 1);
     }
 
@@ -26,7 +27,7 @@ public class SpriteAudioManager : MonoBehaviour
 
         UpdateSpriteAndAudio(!isCurrentlyMuted);
 
-        PlayerPrefs.SetInt("isAudioMuted", isCurrentlyMuted? 0 : 1);
+        PlayerPrefs.SetInt(mutekey, isCurrentlyMuted? 0 : 1);
         PlayerPrefs.Save();
     }
 
