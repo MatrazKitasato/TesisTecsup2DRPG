@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -13,9 +12,6 @@ public class Dialogue : MonoBehaviour
     [SerializeField] TMP_Text dialogueText;
     [SerializeField, TextArea(4,6)] string[] dialogueLines;
     [SerializeField] float typingTime = 0.05f;
-    
-
-    // Update is called once per frame
     void Update()
     {
         if(isPlayerInRange && Input.GetButtonDown("Fire1"))

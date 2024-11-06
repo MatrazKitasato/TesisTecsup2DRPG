@@ -9,8 +9,6 @@ public class AudioToggleButton : MonoBehaviour
     public SpriteAudioManager audioManager;
     void Start()
     {
-        //audioManager = FindObjectOfType<SpriteAudioManager>();
-
         if (audioManager == null)
         {
             Debug.LogError("No se encontró un SpriteAudioManager en la escena.");

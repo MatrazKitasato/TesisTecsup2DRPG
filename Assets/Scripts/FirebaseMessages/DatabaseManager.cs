@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Firebase;
 using Firebase.Database;
@@ -12,7 +10,6 @@ public class DatabaseManager : MonoBehaviour
     public TMP_InputField inputField;
     public TMP_Text errorMessageText;
     private DatabaseReference databaseReference;
-
     void Start()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
@@ -21,7 +18,6 @@ public class DatabaseManager : MonoBehaviour
             databaseReference = FirebaseDatabase.DefaultInstance.RootReference;
         });
     }
-
     public void SendMessageToFirebase()
     {
         string message = inputField.text.Trim();
@@ -55,3 +51,5 @@ public class DatabaseManager : MonoBehaviour
         SceneManager.LoadScene("MessageViewer");
     }
 }
+
+

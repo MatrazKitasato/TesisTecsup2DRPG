@@ -1,15 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
 using Firebase;
 using Firebase.Database;
 using Firebase.Extensions;
 using System.Collections.Generic;
 using TMPro;
-
 public class RandomMessageReceiver : MonoBehaviour
 {
     private DatabaseReference databaseReference;
-
     public List<TextMeshProUGUI> messageTexts;
 
     void Start()
@@ -21,7 +18,6 @@ public class RandomMessageReceiver : MonoBehaviour
             RetrieveRandomMessages();
         });
     }
-
     void RetrieveRandomMessages()
     {
         databaseReference.Child("messages").GetValueAsync().ContinueWithOnMainThread(task =>
@@ -56,7 +52,6 @@ public class RandomMessageReceiver : MonoBehaviour
             }
         });
     }
-
     List<string> GetRandomMessages(List<string> messages, int count)
     {
         List<string> randomMessages = new List<string>();
@@ -74,7 +69,6 @@ public class RandomMessageReceiver : MonoBehaviour
                 randomMessages.Add(randomMessage);
             }
         }
-
         return randomMessages;
     }
 }

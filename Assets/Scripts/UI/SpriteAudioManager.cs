@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +13,6 @@ public class SpriteAudioManager : MonoBehaviour
     public string mutekey;
     void Start()
     {
-        //DontDestroyOnLoad(gameObject);
         int isMuted = PlayerPrefs.GetInt(mutekey, 0);
         UpdateSpriteAndAudio(isMuted == 1);
     }
