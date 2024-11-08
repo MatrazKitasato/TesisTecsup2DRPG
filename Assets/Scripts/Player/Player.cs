@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float moveX;
     [SerializeField] float moveY;
     [SerializeField] Vector2 movement;
+    public bool isTalking;
 
     [Header("Animation")]
     [SerializeField] Animator anim;
@@ -31,14 +32,13 @@ public class Player : MonoBehaviour
 
     public void Move()
     {
-        if(movement.magnitude > 0)
+        if (movement == Vector2.zero || isTalking == true)
         {
-            rb.velocity = movement.normalized * speed * Time.fixedDeltaTime;
+            rb.velocity = Vector2.zero * Time.fixedDeltaTime;
         }
         else
         {
-            rb.velocity = Vector2.zero;
-            Debug.Log("No se mueve");
+            rb.velocity = movement.normalized * speed * Time.fixedDeltaTime;
         }
     }
     public void GetInput()
@@ -46,11 +46,14 @@ public class Player : MonoBehaviour
         moveX = Input.GetAxis("Horizontal");
         moveY = Input.GetAxis("Vertical");
 
-        movement = new Vector2(moveX, moveY);
+        if(!isTalking)
+        {
+            movement = new Vector2(moveX, moveY);
+        }
     }
     public void UpdateAnimation()
     {
-        if(movement.magnitude > 0)
+        if(movement != Vector2.zero)
         {
             anim.SetBool("Walk", true);
             anim.SetFloat("MoveX", moveX);

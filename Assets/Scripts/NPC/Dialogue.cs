@@ -10,8 +10,16 @@ public class Dialogue : MonoBehaviour
     [SerializeField] GameObject exclamationMark;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
-    [SerializeField, TextArea(4,6)] string[] dialogueLines;
     [SerializeField] float typingTime = 0.05f;
+    [SerializeField] Player pj;
+    [SerializeField] Door door;
+    [SerializeField] bool isFinalNPC = false;
+    [SerializeField, TextArea(4, 8)] string[] dialogueLines;
+    void Start()
+    {
+        pj = FindObjectOfType<Player>().GetComponent<Player>();
+        door = FindObjectOfType<Door>().GetComponent<Door>();
+    }
     void Update()
     {
         if(isPlayerInRange && Input.GetButtonDown("Fire1"))
@@ -22,7 +30,7 @@ public class Dialogue : MonoBehaviour
             }
             else if(dialogueText.text == dialogueLines[lineIndex])
             {
-                NexDialogueLine();
+                NextDialogueLine();
             }
             else
             {
@@ -37,10 +45,10 @@ public class Dialogue : MonoBehaviour
         exclamationMark.SetActive(false);
         dialoguePanel.SetActive(true);
         lineIndex = 0;
-        Time.timeScale = 0f;
+        pj.isTalking = true;
         StartCoroutine(ShowLine());
     }
-    private void NexDialogueLine()
+    private void NextDialogueLine()
     {
         lineIndex++;
         if(lineIndex < dialogueLines.Length)
@@ -52,7 +60,11 @@ public class Dialogue : MonoBehaviour
             didDialogueStart = false;
             dialoguePanel.SetActive(false);
             exclamationMark?.SetActive(true);
-            Time.timeScale = 1f;
+            pj.isTalking = false;
+            if(isFinalNPC)
+            {
+                door.ConditionFullfilled();
+            }
         }
     }
     private IEnumerator ShowLine()
