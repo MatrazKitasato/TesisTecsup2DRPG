@@ -149,11 +149,29 @@ MonoBehaviour:
   exclamationMark: {fileID: 4045496276452116486}
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
-  dialogueLines:
-  - "Orc: Hola Humano, que te trae por aqu\xED"
-  - 
-  - 
   typingTime: 0.05
+  pj: {fileID: 0}
+  door: {fileID: 0}
+  isFinalNPC: 0
+  dialogueLines:
+  - "Guardi\xE1n de la Duda: \"As\xED que has llegado hasta aqu\xED... buscando respuestas
+    en medio de la niebla. Pero dime, \xBFcu\xE1ntas veces has sentido que tus pasos
+    son en vano? \xBFCu\xE1ntas veces has dejado que la duda sea quien decida cu\xE1ndo
+    te detienes?\""
+  - "Kai: \"M\xE1s de las que puedo contar. Cada vez que intento algo, siempre parece
+    haber una voz dentro de m\xED que me dice que no soy suficiente, que tal vez
+    este camino no es el m\xEDo.\""
+  - "Guardi\xE1n de la Duda: \"Esa voz, esa sombra... es una parte de ti, Kai. La
+    duda surge para protegerte de lo desconocido, pero tambi\xE9n para desafiarte.
+    \xBFPor qu\xE9 temes tanto equivocarte? Incluso en el error, hay crecimiento.\""
+  - "Kai: \"Porque cuando fallo, me siento m\xE1s d\xE9bil. Es como si cada error
+    me quitara un poco de m\xED mismo.\""
+  - "Guardi\xE1n de la Duda: \"Cada paso en falso, cada ca\xEDda, es una oportunidad
+    para aprender algo que no sab\xEDas. La duda no desaparece, pero es al avanzar
+    a pesar de ella que descubres tu verdadera fuerza. El camino se revela solo a
+    aquellos que est\xE1n dispuestos a caminarlo, sin importar cu\xE1ntas veces caigan.\""
+  - "\"El verdadero coraje no es avanzar sin miedo, sino avanzar incluso cuando la
+    duda te acompa\xF1a.\""
 --- !u!95 &1077689675523469360
 Animator:
   serializedVersion: 5
